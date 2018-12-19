@@ -6,25 +6,12 @@
 </head>
     <h1>{{ question.question_text }}</h1>
   {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
   <form action="{% url 'polls:vote' question.id %}" method="post">
     {% csrf_token %}
     {% for choice in question.choice_set.all %}
       <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
       <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
     {% endfor %}
-{#    <input type="submit" value="投票">#}
-    <button type="submit">投票</button>
+      <input type="submit" value="投票">
   </form>
-
 {#  建议所有业务逻辑放后端，前段尽可能简单，变量直接渲染使用#}
-{#  {% for c in choices %}#}
-{#    <P>{{ c.choice_text }}</P>#}
-{#  {% endfor %}#}
-<ul>
-  {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }}</li>
-  {% endfor %}
-</ul>
-</body>
-</html>

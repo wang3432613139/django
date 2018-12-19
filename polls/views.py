@@ -94,7 +94,6 @@ def detail(request, question_id):
 def results(request,question_id):
     """
     投票结果
-
     """
     question = Question.objects.get(id=question_id)
     return render(request,'polls/results.html',{'question':question})
