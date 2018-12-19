@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>结果页</title>
+</head>
+<body>
+  <h1>{{ question.question_text }}</h1>
+  <ul>
+    {% for choice in question.choice_set.all %}
+    <li>{{ choice.chice_text }}--{{ choice.votes }}</li>
+    {% endfor %}
+
+  <a href="{% url 'polls:detail' question.id %}">查看投票数</a>
+  </ul>
+</body>
+</html>
