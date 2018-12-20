@@ -122,7 +122,7 @@ def vote(request,question_id):
         # commit;
         selected_choice.save()
         # 投票完重定向到 views.resuits(qid)
-        return HttpResponseRedirect( reverse ('polls:detail',args=(question_id,)))
+        return HttpResponseRedirect(reverse('polls:results',args=(question.id,)))
     print('hello world')
 # 通过模板示例跟defindex类相比
 class SimpleView(generic.ListView):
@@ -131,3 +131,4 @@ class SimpleView(generic.ListView):
 
     def get_queryset(self):
         return Question.objects.all()
+

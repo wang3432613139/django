@@ -27,12 +27,13 @@ urlpatterns = [
     # 问题详情页 ex:/polls/l/
     path('<int:question_id>/',views.detail,name='detail'),
     # 投票结果页   /polls/2/results/
-    path('<int:question_id>/results', views.results, name='results'),
+    path('<int:question_id>/results/', views.results, name='results'),
     # 去投票。选项计数加一    /polls/5/vote
     path('<int:question_id>/vote/', views.vote, name='vote'),
     # 通过视图示例
     path('simple/',views.SimpleView.as_view(),name='simple')
 ]
+
 
 
 

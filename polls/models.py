@@ -37,3 +37,6 @@ create table votes if not exists(
 
 # django自带orm框架，用法类sqlalchemy
 # 自定义的类要继承orm框架中的Model类，这样orm框架能把类和数据库联系起来
+
+
+
